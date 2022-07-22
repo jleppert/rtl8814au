@@ -16,6 +16,17 @@ $ make install
 * Fix USBModeSwitch function (and switch between USB2 and USB3/SuperSpeed)
 ```
 
+# DKMS installation with tegra realtime kernel
+
+One the device:
+
+```
+$ make dkms_install
+$ sudo make CROSS_COMPILE= -C /lib/modules/4.9.253-rt168-tegra/build M=/var/lib/dkms/8814au/5.8.5.1/build  modules
+$ cd /var/lib/dkms/8814au/5.8.5.1/build && make install
+$ make dkms_remove
+```
+
 # DKMS installation (normal)
 ```
 $ make dkms_install
